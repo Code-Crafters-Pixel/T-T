@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Infinite Travels</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+            background-color: #003153;
+            padding: 0 20px;
+        }
+
+        /* Logo Section */
+        .logo h1 {
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+        }
+
+        /* Navigation Links */
+        .Links ul {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .Links ul li {
+            list-style: none;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .Links ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* .Links ul li::after{
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+        .Links ul li:hover::after{
+            width: 100%;
+        } */
+
+        select {
+            border: none;
+            outline: none;
+            font-weight: 500;
+            color: white;
+            font-size: 16px;
+            background-color: #003153;
+        }
+
+        /* Search Bar */
+        .Search input {
+            height: 38px;
+            padding: 0 15px;
+            width: 270px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
+
+        /* Buttons */
+        .Buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .Buttons .Btn {
+            width: 90px;
+            height: 35px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            background-color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .Buttons .Btn:hover {
+            background-color: #ffcc00;
+            color: #003153;
+        }
+
+        /* Profile Circle */
+        .profile {
+            height: 40px;
+            width: 40px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        /* Hamburger Icon */
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* =====================
+           RESPONSIVE DESIGN
+        ===================== */
+
+        /* Tablet View */
+        @media (max-width: 992px) {
+            header {
+                justify-content: space-between;
+            }
+
+            .Links ul {
+                gap: 25px;
+            }
+
+            .Search input {
+                width: 180px;
+            }
+
+            .Buttons .Btn {
+                width: 75px;
+                font-size: 14px;
+            }
+
+            .logo h1 {
+                font-size: 20px;
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .Links {
+                display: none;
+                width: 100%;
+                background-color: #002542;
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            .Links.active {
+                display: block;
+            }
+
+            .Links ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .Search, .Buttons, .profile {
+                display: none;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 18px;
+            }
+
+            .Links ul li, select {
+                font-size: 14px;
+            }
+        }
+    </style>
+    </head>
+    <body>
+
+        <header>
+            <div class="logo">
+                <h1>Infinite Travels</h1>
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="Links" id="nav-links">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li>
+                        <select id="Destinations">
+                            <option value disabled selected
+                                hidden>Destinations</option>
+                            <option value="Domestic">Domestic</option>
+                            <option value="International">International</option>
+                        </select>
+                    </li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li>
+                        <select id="Language">
+                            <option value="LANG" disabled selected
+                                hidden>LANG</option>
+                            <option value="EN">EN</option>
+                            <option value="GU">GU</option>
+                            <option value="HIN">HIN</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="Search">
+                <input type="search" placeholder="Search Here">
+            </div>
+
+            <div class="Buttons">
+                <button class="Btn">Register</button>
+                <button class="Btn">Login</button>
+            </div>
+
+            <div class="profile"></div>
+        </header>
+
+        <div class="container-video"
+            style="position: relative; width: 100%; height: 100vh; overflow: hidden; margin-top: -80px; z-index: -1;">
+
+            <video autoplay muted loop playsinline
+                style="
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+  ">
+                <source src="GT_Web_Banner_2025.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+        <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+    </script>
+    </body>
+</html>
