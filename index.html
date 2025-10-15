@@ -36,6 +36,10 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 24px;
         }
+        .logo img{
+            height: 150px;
+            width: 150px;
+        }
 
         /* Navigation Links */
         .Links ul {
@@ -91,10 +95,6 @@
             transition: 0.3s;
         }
 
-        .Buttons .Btn:hover {
-            background-color: #ffcc00;
-            color: #003153;
-        }
 
         /* Profile Circle */
         .profile {
@@ -111,120 +111,232 @@
             color: white;
             cursor: pointer;
         }
-        @media (max-width: 992px) {
-            header {
-                justify-content: space-between;
-            }
 
-            .Links ul {
-                gap: 25px;
-            }
+/* 🌐 Large Screens (Desktops >1200px) */
+@media (min-width: 1200px) {
+    header {
+        padding: 0 100px;
+    }
+    .Links ul {
+        gap: 50px;
+    }
+    .Search input {
+        width: 300px;
+    }
+    .Buttons .Btn {
+        width: 100px;
+        height: 38px;
+        font-size: 15px;
+    }
+}
 
-            .Search input {
-                width: 180px;
-            }
+/* 💻 Medium Screens (Laptops/Tablets up to 992px) */
+@media (max-width: 992px) {
+    header {
+        justify-content: space-between;
+        padding: 10px 40px;
+    }
 
-            .Buttons .Btn {
-                width: 75px;
-                font-size: 14px;
-            }
+    .logo img {
+        height: 120px;
+        width: 120px;
+    }
 
-            .logo h1 {
-                font-size: 20px;
-            }
-        }
+    .Links ul {
+        gap: 25px;
+    }
 
-        @media (max-width: 768px) {
-            header {
-                flex-wrap: wrap;
-                height: auto;
-                padding: 10px 20px;
-            }
+    .Search input {
+        width: 200px;
+    }
 
-            .menu-toggle {
-                display: block;
-            }
+    .Buttons .Btn {
+        width: 80px;
+        font-size: 14px;
+    }
+}
 
-            .Links {
-                display: none;
-                width: 100%;
-                background-color: #002542;
-                text-align: center;
-                padding: 15px 0;
-            }
+/* 📲 Tablets & Mobiles (Up to 768px) */
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #003153;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
 
-            .Links.active {
-                display: block;
-            }
+    .menu-toggle {
+        display: block;
+        font-size: 26px;
+        cursor: pointer;
+        z-index: 1100;
+    }
 
-            .Links ul {
-                flex-direction: column;
-                gap: 15px;
-            }
+    /* 🧭 Side Drawer Menu */
+    .Links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #002542;
+        text-align: center;
+        padding-top: 100px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
 
-            .Search, .Buttons, .profile {
-                display: none;
-            }
-        }
+    .Links.active {
+        right: 0;
+    }
 
-        @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 18px;
-            }
+    .Links ul {
+        flex-direction: column;
+        gap: 25px;
+    }
 
-            .Links ul li, select {
-                font-size: 14px;
-            }
-        }
+    .Links ul li a, select {
+        font-size: 18px;
+    }
+
+    /* Hide search, buttons, and profile for mobile */
+    .Search, .Buttons, .profile {
+        display: none;
+    }
+
+    /* Optional dim background when menu opens */
+    body.menu-open::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+}
+
+/* 📱 Small Phones (Up to 576px) */
+@media (max-width: 576px) {
+    .logo img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .Links ul li a, select {
+        font-size: 16px;
+    }
+}
+
+/* 📞 Extra Small Phones (Up to 400px) */
+@media (max-width: 400px) {
+    .logo img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .Links ul li a, select {
+        font-size: 15px;
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+    }
+}
+
+
+
+
+/* Hide mobile buttons on desktop */
+.mobile-buttons {
+    display: none;
+}
+
+/* =========================
+   Mobile & Tablet Styles
+   ========================= */
+@media (max-width: 768px) {
+    /* Hide original buttons */
+    .Buttons {
+        display: none;
+    }
+
+    /* Show buttons inside menu */
+    .mobile-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .mobile-buttons .Btn {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+}
+
     </style>
     </head>
     <body>
 
         <header>
-            <div class="logo">
-                <h1>Infinite Travels</h1>
-            </div>
+    <div class="logo">
+        <img src="logo_t_t-removebg-preview.png" alt="">
+    </div>
 
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
-            <div class="Links" id="nav-links">
-                <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li>
-                        <select id="Destinations">
-                            <option value disabled selected
-                                hidden>Destinations</option>
-                            <option value="Domestic">Domestic</option>
-                            <option value="International">International</option>
-                        </select>
-                    </li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Contact">Contact</a></li>
-                    <li>
-                        <select id="Language">
-                            <option value="LANG" disabled selected
-                                hidden>🌐</option>
-                            <option value="EN">EN</option>
-                            <option value="GU">GU</option>
-                            <option value="HIN">HIN</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="Search">
-                <input type="search" placeholder="Search Here">
-            </div>
-
-            <div class="Buttons">
+    <div class="Links" id="nav-links">
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li>
+                <select id="Destinations">
+                    <option value disabled selected hidden>Destinations</option>
+                    <option value="Domestic">Domestic</option>
+                    <option value="International">International</option>
+                </select>
+            </li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li>
+                <select id="Language">
+                    <option value="LANG" disabled selected hidden>🌐</option>
+                    <option value="EN">EN</option>
+                    <option value="GU">GU</option>
+                    <option value="HIN">HIN</option>
+                </select>
+            </li>
+            <!-- Mobile buttons -->
+            <li class="mobile-buttons">
                 <button class="Btn">Register</button>
                 <button class="Btn">Login</button>
-            </div>
+            </li>   
+        </ul>
+    </div>
 
-            <div class="profile"></div>
-        </header>
+    <!-- Desktop buttons -->
+    <div class="Buttons">
+        <button class="Btn">Register</button>
+        <button class="Btn">Login</button>
+    </div>
+
+    <div class="profile"></div>
+</header>
+
 
         <div class="container-video"
             style="position: relative; width: 100%; height: 100vh; overflow: hidden; margin-top: -80px; z-index: -1;">
@@ -242,12 +354,14 @@
         </div>
 
         <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+
 
     </script>
     </body>
