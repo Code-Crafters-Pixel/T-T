@@ -8,6 +8,21 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+          <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
         * {
             margin: 0;
@@ -138,8 +153,8 @@
     }
 
     .logo img {
-        height: 120px;
-        width: 120px;
+        height: 80px;
+        width: 80px;
     }
 
     .Links ul {
@@ -228,8 +243,8 @@
 /* 📱 Small Phones (Up to 576px) */
 @media (max-width: 576px) {
     .logo img {
-        height: 120px;
-        width: 120px;
+        height: 70px;
+        width: 70px;
     }
 
     .Links ul li a, select {
@@ -240,8 +255,8 @@
 /* 📞 Extra Small Phones (Up to 400px) */
 @media (max-width: 400px) {
     .logo img {
-        height: 120px;
-        width: 120px;
+        height: 70px;
+        width: 70px;
     }
 
     .Links ul li a, select {
@@ -287,6 +302,241 @@
     }
 }
 
+
+/* top travel destination slider */
+
+.destination-section {
+  width: 95%;
+  max-width: 1350px;
+  margin: 60px auto;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+/* ============================= */
+/* 4. Swiper / Slider            */
+/* ============================= */
+.swiper {
+  overflow: visible; /* change to hidden if you want no partial cards behind buttons */
+  position: relative;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.swiper-wrapper {
+  padding: 0 20px; /* adds space between edge and first/last card */
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary-color);
+  padding: 10px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(10, 132, 255, 0.3);
+}
+
+/* Position buttons */
+.swiper-button-prev {
+  left: -60px;
+}
+
+.swiper-button-next {
+  right: -60px;
+}
+
+/* Buttons for large screens */
+@media (min-width: 1350px) {
+  .swiper-button-prev {
+    left: -80px;
+  }
+  .swiper-button-next {
+    right: -80px;
+  }
+}
+
+/* Buttons for smaller screens */
+@media (max-width: 991px) {
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+}
+
+/* ============================= */
+/* 5. Destination Cards          */
+/* ============================= */
+.destination-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.35s ease;
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destination-card:hover .image-container img {
+  transform: scale(1.07);
+}
+
+/* ============================= */
+/* 6. Card Content               */
+/* ============================= */
+.card-content {
+  text-align: left;
+  padding: 20px;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.price {
+  text-align: right;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin: 0px 0;
+  position: absolute;
+  top: 250px;
+  right: 0;
+  padding-right: 20px;
+  font-size: 1.2rem;
+}
+
+.price span {
+  color: #777;
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: block;
+}
+
+.desc {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tags span {
+  background: #e8f1ff;
+  color: #0a4cff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.packages,
+.best-time {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+/* ============================= */
+/* 7. Buttons                     */
+/* ============================= */
+.explore-btn {
+  width: 100%;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.explore-btn:hover {
+  background: #0069d9;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(10, 132, 255, 0.3);
+}
+
+/* Focus outlines for accessibility */
+.explore-btn:focus,
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* ============================= */
+/* 8. Responsive                  */
+/* ============================= */
+@media (max-width: 991px) {
+  .image-container img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-container img {
+    height: 300px;
+  }
+
+  .explore-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
 
 
 /* Top destination */
@@ -1324,6 +1574,416 @@ button:hover {
 
     </div>
 
+
+    <!-- top ttravel destination slider -->
+
+    <section class="destination-section">
+      <h2 class="section-title">Top Travel Destinations</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- CARD 1 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img src="logo/Img/Goa.jpg" alt="Discover Goa" loading="lazy" />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Discover Goa</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Sun, sand & serenity — dive into Goa’s vibrant beaches and
+                carefree vibes.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Singapore.jpg"
+                alt="Explore Singapore"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <i class="fa-solid fa-location-dot"></i> Explore Singapore
+              </h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                A perfect mix of culture and skyline — where tradition meets
+                tomorrow.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Lakshadweep.jpg"
+                alt="Lakshadweep Paradise"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <i class="fa-solid fa-location-dot"></i> Lakshadweep Paradise
+              </h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Crystal lagoons, coral reefs, and calm waves — your island
+                escape awaits.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Andaman & Nicobar Islands.jpg"
+                alt="Andaman & Nicobar Islands"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <i class="fa-solid fa-location-dot"></i> Andaman & Nicobar
+                Islands
+              </h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Lose yourself in turquoise waters, white sands, and untouched
+                nature.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img src="logo/Img/Turkey.jpg" alt="Magical Turkey" loading="lazy" />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Magical Turkey</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                From hot air balloons to ancient bazaars — every corner tells a
+                story.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img src="logo/Img/Bali Bliss.jpg" alt="Bali Bliss" loading="lazy" />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Bali Bliss</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Find your zen among temples, beaches & tropical beauty like no
+                other.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 7 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Maldives Escape.jpg"
+                alt="Maldives Escape"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Maldives Escape</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Luxury above the waves — wake up to the sound of the ocean
+                breeze.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 8 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Hidden Malaysia.jpg"
+                alt="Malaysia"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Malaysia</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Discover exotic rainforests, vibrant streets & flavors that stay
+                forever.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 9 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Greece Getaway.jpg"
+                alt="Greece Getaway"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Greece Getaway</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Blue domes, white sands & sunsets that paint the Aegean sky.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 10 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Lonavala Hills.jpg"
+                alt="Lonavala Hills"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Lonavala Hills</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Mist, mountains & monsoon magic — nature’s retreat near the
+                city.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 11 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Heavenly Kashmir.jpg"
+                alt="Heavenly Kashmir"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3><i class="fa-solid fa-location-dot"></i> Heavenly Kashmir</h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Paradise on earth — snow peaks, shikaras & soul-soothing beauty.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+
+          <!-- CARD 12 -->
+          <div class="swiper-slide destination-card">
+            <div class="image-container">
+              <img
+                src="logo/Img/Rishikesh & Haridwar Journey.jpg"
+                alt="Rishikesh & Haridwar Journey"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>
+                <i class="fa-solid fa-location-dot"></i> Rishikesh & Haridwar
+                Journey
+              </h3>
+              <p class="price">$899 <span>starting from</span></p>
+              <p class="desc">
+                Flow with the Ganga — peace, spirituality & adventure in every
+                breath.
+              </p>
+              <div class="tags">
+                <span>Beaches</span>
+                <span>Temples</span>
+                <span>Culture</span>
+                <span>+1 more</span>
+              </div>
+              <p class="packages">
+                <i class="fa-solid fa-box"></i> 15 packages available
+              </p>
+              <p class="best-time">
+                <i class="fa-solid fa-calendar-days"></i> Best time: April –
+                October
+              </p>
+              <button class="explore-btn">Explore</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper Controls -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+
     <!-- Top destination -->
 
     <section class="container">
@@ -1864,6 +2524,37 @@ menuToggle.addEventListener('click', () => {
     document.body.classList.toggle('menu-open');
 });
 
+
+// top travel destination slider
+
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 24,
+  slidesPerView: 3, // visible cards
+  slidesPerGroup: 1, // only 1 card slides per click
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  keyboard: {
+    enabled: true,
+  },
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    1200: { slidesPerView: 3, slidesPerGroup: 1 },
+    992: { slidesPerView: 3, slidesPerGroup: 1 },
+    600: { slidesPerView: 2, slidesPerGroup: 1 },
+    0: { slidesPerView: 1, slidesPerGroup: 1 },
+  },
+});
 
 // Travel Themes
 
