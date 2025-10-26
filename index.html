@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Infinite Travels</title>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Travels</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +20,7 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        header {
+        .top-bar {
             height: 80px;
             display: flex;
             justify-content: space-around;
@@ -37,8 +37,8 @@
             font-size: 24px;
         }
         .logo img{
-            height: 150px;
-            width: 150px;
+            height: 80px;
+            width: 85px;
         }
 
         /* Navigation Links */
@@ -114,7 +114,7 @@
 
 /* 🌐 Large Screens (Desktops >1200px) */
 @media (min-width: 1200px) {
-    header {
+    .top-bar {
         padding: 0 100px;
     }
     .Links ul {
@@ -132,7 +132,7 @@
 
 /* 💻 Medium Screens (Laptops/Tablets up to 992px) */
 @media (max-width: 992px) {
-    header {
+    .top-bar {
         justify-content: space-between;
         padding: 10px 40px;
     }
@@ -158,7 +158,7 @@
 
 /* 📲 Tablets & Mobiles (Up to 768px) */
 @media (max-width: 768px) {
-    header {
+    .top-bar {
         position: fixed;
         top: 0;
         left: 0;
@@ -287,73 +287,1575 @@
     }
 }
 
+
+
+/* Top destination */
+
+
+/* Container */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+/* Grid layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.card-img {
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Content */
+.card-content {
+  padding: 22px 20px 25px 20px;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.price {
+  color: #00a3a3;
+  font-weight: 600;
+  margin: 5px 0 10px 0;
+  font-size: 1rem;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Button */
+button {
+  background: linear-gradient(135deg, #007bff, #00bfa5);
+  border: none;
+  color: white;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .card-img img {
+    height: 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 40px 20px;
+  }
+
+  .card-container {
+    gap: 25px;
+  }
+
+  .card-img img {
+    height: 200px;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 0.95rem;
+  }
+
+  .card-img img {
+    height: 180px;
+  }
+}
+
+/* Between 450px and 600px screen width */
+@media (min-width: 380px) and (max-width: 600px) {
+  .card-img img {
+    height: 300px; /* increased height for better full image visibility */
+  }
+}
+
+
+
+/* Travel Theme */
+    :root {
+        --gap: 25px;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #eaf1ff;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      .section-title {
+        margin: 30px 0;
+        color: #1b2947;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #222;
+      }
+
+      /* Slider shell */
+      .slider {
+        --per-page: 3;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px 20px;
+      }
+      .hint {
+        color: #41557a;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .viewport {
+        overflow: hidden;
+        touch-action: pan-y;
+        border-radius: 10px;
+        position: relative;
+      }
+      .track {
+        display: flex;
+        gap: var(--gap);
+        will-change: transform;
+        transition: transform 0.5s ease;
+      }
+
+      /* Cards */
+      .tour-card {
+        flex: 0 0
+          calc((100% - var(--gap) * (var(--per-page) - 1)) / var(--per-page));
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.4s ease;
+        cursor: pointer;
+      }
+      .tour-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .tour-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+      }
+      .tour-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .tour-card:hover img {
+        transform: scale(1.1);
+      }
+      .tour-title {
+        position: absolute;
+        bottom: 65px;
+        left: 20px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.3rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      }
+      .tour-footer {
+        background-color: #0b1e47;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+      }
+      .tour-footer .label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Right arrow inside the card footer (tap target) */
+      .card-arrow-btn {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 20px;
+        line-height: 1;
+        padding: 4px 2px 2px 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.25s ease, background 0.2s ease;
+      }
+      .card-arrow-btn:hover,
+      .card-arrow-btn:focus-visible {
+        transform: translateX(6px);
+        background: rgba(255, 255, 255, 0.08);
+        outline: none;
+      }
+
+      /* Transparent corner arrows (overlay outside cards) */
+      .corner-arrow {
+        position: absolute;
+        top: 12px;
+        width: 56px;
+        height: 56px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(11, 30, 71, 0.18);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 4;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        transition: opacity 0.25s ease, transform 0.2s ease,
+          background 0.2s ease;
+      }
+      .corner-arrow.left {
+        left: 12px;
+      }
+      .corner-arrow.right {
+        right: 12px;
+      }
+      .corner-arrow:hover {
+        background: rgba(11, 30, 71, 0.28);
+        transform: translateY(-1px);
+      }
+      .corner-arrow svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      /* Show/hide behavior */
+      @media (hover: hover) and (pointer: fine) {
+        .corner-arrow {
+          opacity: 0;
+        }
+        .viewport:hover .corner-arrow {
+          opacity: 1;
+        }
+        .viewport {
+          cursor: default;
+        } /* no drag cursor */
+      }
+      @media (hover: none) and (pointer: coarse) {
+        .corner-arrow {
+          opacity: 0.9;
+        } /* always visible on touch */
+      }
+
+      /* Dots */
+      .dots {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 12px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        border: none;
+        background: #9fb2d1;
+        cursor: pointer;
+      }
+      .dot[aria-current="true"] {
+        background: #0b1e47;
+        transform: scale(1.1);
+      }
+
+      /* Responsive: 2 per page on tablets, 1 on phones */
+      @media (max-width: 900px) {
+        .slider {
+          --per-page: 2;
+        }
+      }
+      @media (max-width: 600px) {
+        .slider {
+          --per-page: 1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .track {
+          transition: none;
+        }
+      }
+
+
+      /* Review Section */
+
+      #container{
+            height: 600px;  
+            width: 100%;
+            background-color: #003153;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 85px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+        h2{
+            font-size: 45px;
+            font-weight: 400;
+            margin-bottom: 55px;
+            text-align: center;color: #fff;
+        }
+        .counter{
+            display: flex;
+            flex-direction: row;
+            gap: 200px;
+            flex-wrap: wrap;
+            justify-content: center;color: #fff;
+        }
+        .tours{
+            text-align: center;
+            margin-bottom: 20px;color: #fff;
+        }
+        h1{
+            font-size: 70px;
+            font-weight: initial; color: #fff;
+        }
+        p{
+            font-size: 17px;
+            font-weight: 400; color: #fff;
+        }
+
+        /* ====== TABLET ====== */
+        @media (max-width: 1024px){
+            #container{
+                padding: 50px 50px;
+            }
+            h2{
+                font-size: 36px;
+                margin-bottom: 40px;
+            }
+            .counter{
+                gap: 80px;
+            }
+            h1{
+                font-size: 55px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+
+        /* ====== MOBILE ====== */
+        @media (max-width: 768px){
+            #container{
+                padding: 40px 20px;
+            }
+            h2{
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+            .counter{
+                flex-direction: column;
+                gap: 30px;
+            }
+            h1{
+                font-size: 45px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+
+
+
+        /* service section */
+
+     .services-section {
+  padding: 50px 10%;
+  text-align: left;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #000;
+  text-align: center;
+}
+
+/* ⬇️ 3-column layout */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background: lightblue;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: left;
+  transition: all 0.4s ease;
+  color: #0a2fb6;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card .icon {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.service-card p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.service-card:hover {
+  background: #0a2fb6;
+  color: #fff;
+  transform: translateY(-8px);
+}
+
+.service-card:hover h3 {
+  color: #fff;
+}
+
+.service-card:hover p {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+/* robot .chat styles */
+
+    /* Floating chatbot button */
+    .chatbot-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #151b2f;
+      border: none;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    .chatbot-btn:hover {
+      background-color: #151b2f;
+      transform: scale(1.05);
+    }
+
+    /* Chat window */
+
+
+    .chatbot-window {
+      position: fixed;
+      bottom: 95px;
+      right: 25px;
+      width: 320px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .chat-header {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-body {
+      padding: 15px;
+      height: 450px;
+      overflow-y: auto;
+      background-color: #f9fbff;
+    }
+
+    .chat-message {
+      margin-bottom: 12px;
+    }
+
+    .bot-message {
+      background-color: #eaf2ff;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 85%;
+    }
+
+    .user-message {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 85%;
+      margin-left: auto;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .chat-footer button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-left: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-footer button:hover {
+      background-color: #0056b3;
+    }
+
+
+    /* AI Powered Suggestions */
+
+      
+    header {
+        padding: 48px 20px 20px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0 0 8px;
+        font-size: clamp(24px, 4vw, 40px);
+        letter-spacing: 0.2px;
+        color:
+        #182937; 
+      }
+      header p {
+        margin: 0;
+        color: #8ea0bf;
+      }
+      main {
+        max-width: 1100px;
+        /* width:100%; */
+        margin: 0 auto;
+        padding: 20px;
+        /* background-color: #121623; */
+      }
+      .panel {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+      }
+      .controls {
+        display: grid;
+        gap: 12px;
+        align-items: center;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #1d2440;
+        color: #e8eeff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        cursor: pointer;
+        user-select: none;
+        transition: 0.2s transform, 0.2s background, 0.2s border-color,
+          0.2s box-shadow;
+        font-weight: 600;
+      }
+      .chip .emoji {
+        filter: saturate(120%);
+      }
+      input[type="checkbox"] {
+        display: none;
+      }
+      input[type="checkbox"]:checked + label.chip {
+        background: #25305a;
+        border-color: rgba(106, 227, 255, 0.4);
+        box-shadow: 0 0 0 4px rgba(106, 227, 255, 0.4) inset;
+        transform: translateY(-1px);
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+      button {
+        background: linear-gradient(90deg, #6ae3ff, #8b7dff);
+        color: #0b0f1a;
+        border: 0;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+        cursor: pointer;
+        transition: 0.15s transform;
+      }
+      button.secondary {
+        background: linear-gradient(90deg, #6ae3ff, #8b7dff);
+        color: #0b0f1a;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      button:active {
+        transform: translateY(1px);
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 18px;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      }
+      .card {
+        background: #151b2f;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        transition: 0.25s transform, 0.25s box-shadow, 0.25s border-color;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(106, 227, 255, 0.3);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+      }
+      .media {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+        background: #0b0f1a;
+      }
+      .media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scale(1.03);
+        filter: saturate(108%);
+      }
+      .tagbar {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .pill {
+        background: rgba(0, 0, 0, 0.45);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+      .content {
+        padding: 14px 14px 10px;
+      }
+      .title {
+        margin: 0;
+        font-size: 18px;
+      }
+      .sub {
+        margin: 2px 0 8px;
+        color: #8ea0bf;
+        font-size: 13px;
+      }
+      .desc {
+        margin: 8px 0 10px;
+        color: #d9e4ff;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .hl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0 6px;
+        padding: 0;
+      }
+      .hl li {
+        list-style: none;
+        background: #0f1530;
+        color: #ccd8ff;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #8ea0bf;
+        font-size: 12px;
+        margin-top: 8px;
+      }
+      .why {
+        color: #a8ffe7;
+        font-weight: 700;
+      }
+      .empty {
+        text-align: center;
+        color: #8ea0bf;
+        padding: 24px;
+        border: 1px dashed rgba(255, 255, 255, 0.18);
+        border-radius: 12px;
+      }
+      footer {
+        color: #8ea0bf;
+        text-align: center;
+        padding: 20px 0 40px;
+        font-size: 13px;
+      }
+      @media (min-width: 900px) {
+        .controls {
+          grid-template-columns: 1fr auto;
+        }
+        .chips {
+          justify-content: flex-start;
+        }
+        header {
+          text-align: left;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+      }
+
+
+
+
+
+    /* footer section styles */
+
+        .footer {
+         background-color: #003153; 
+        color: #fff;
+        padding: 40px 30px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+        gap: 50px;
+        
+    }
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin: 10px;
+        
+    }
+
+    .footer h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .footer p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    .footer .social-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer .social-icons a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #555; 
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+        background-color: #003153;
+    }
+
+    .footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer ul li a {
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .footer ul li a:hover {
+        color: #003153;
+    }
+
+    .contact-info i {
+        margin-right: 10px;
+        color: #fff;
+    }
     </style>
-    </head>
-    <body>
+  </head>
+  <body>
 
-        <header>
-    <div class="logo">
-        <img src="logo_t_t-removebg-preview.png" alt="">
-    </div>
+    <!-- Header and Banner -->
 
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="logo/Gemini_Generated_Image_osayx8osayx8osay.png" alt>
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
         <i class="fa-solid fa-bars"></i>
-    </div>
+      </div>
 
-    <div class="Links" id="nav-links">
+      <div class="Links" id="nav-links">
         <ul>
-            <li><a href="#Home">Home</a></li>
-            <li>
-                <select id="Destinations">
-                    <option value disabled selected hidden>Destinations</option>
-                    <option value="Domestic">Domestic</option>
-                    <option value="International">International</option>
-                </select>
-            </li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li>
-                <select id="Language">
-                    <option value="LANG" disabled selected hidden>🌐</option>
-                    <option value="EN">EN</option>
-                    <option value="GU">GU</option>
-                    <option value="HIN">HIN</option>
-                </select>
-            </li>
-            <!-- Mobile buttons -->
-            <li class="mobile-buttons">
-                <button class="Btn">Register</button>
-                <button class="Btn">Login</button>
-            </li>   
+          <li><a href="#Home">Home</a></li>
+          <li>
+            <select id="Destinations">
+              <option value disabled selected hidden>Destinations</option>
+              <option value="Domestic">Domestic</option>
+              <option value="International">International</option>
+            </select>
+          </li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li>
+            <select id="Language">
+              <option value="LANG" disabled selected hidden>🌐</option>
+              <option value="EN">EN</option>
+              <option value="GU">GU</option>
+              <option value="HIN">HIN</option>
+            </select>
+          </li>
+          <!-- Mobile buttons -->
+          <li class="mobile-buttons">
+            <button class="Btn">Register</button>
+            <button class="Btn">Login</button>
+          </li>
         </ul>
-    </div>
+      </div>
 
-    <!-- Desktop buttons -->
-    <div class="Buttons">
+      <!-- Desktop buttons -->
+      <div class="Buttons">
         <button class="Btn">Register</button>
         <button class="Btn">Login</button>
+      </div>
+
+      <div class="profile"></div>
     </div>
 
-    <div class="profile"></div>
-</header>
+    <div class="container-video"
+      style="position: relative; width: 100%; height: 100vh; overflow: hidden; margin-top: -80px; z-index: -1;">
 
-
-        <div class="container-video"
-            style="position: relative; width: 100%; height: 100vh; overflow: hidden; margin-top: -80px; z-index: -1;">
-
-            <video autoplay muted loop playsinline
-                style="
+      <video autoplay muted loop playsinline
+        style="
     width: 100%;
     height: 100vh;
     object-fit: cover;
     display: block;
   ">
-                <source src="GT_Web_Banner_2025.mp4" type="video/mp4">
-            </video>
+        <source src="GT_Web_Banner_2025.mp4" type="video/mp4">
+      </video>
 
+    </div>
+
+    <!-- Top destination -->
+
+    <section class="container">
+      <h1 class="heading">Explore Top Destinations</h1>
+
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Goa.jpg" alt="Goa" />
+          </div>
+          <div class="card-content">
+            <h3>Discover Goa</h3>
+
+            <p class="desc">
+              Sun, sand & serenity — dive into Goa’s vibrant beaches and
+              carefree vibes.
+            </p>
+            <button>View Tour</button>
+          </div>
         </div>
 
-        <script>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Singapore.jpg" alt="Singapore" />
+          </div>
+          <div class="card-content">
+            <h3>Explore Singapore</h3>
+
+            <p class="desc">
+              A perfect mix of culture and skyline — where tradition meets
+              tomorrow.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Lakshadweep.jpg" alt="Lakshadweep" />
+          </div>
+          <div class="card-content">
+            <h3>Lakshadweep Paradise</h3>
+
+            <p class="desc">
+              Crystal lagoons, coral reefs, and calm waves — your island escape
+              awaits.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Andaman & Nicobar Islands.jpg" alt="Andaman" />
+          </div>
+          <div class="card-content">
+            <h3>Andaman & Nicobar Islands</h3>
+
+            <p class="desc">
+              Lose yourself in turquoise waters, white sands, and untouched
+              nature.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Turkey.jpg" alt="Turkey" />
+          </div>
+          <div class="card-content">
+            <h3>Magical Turkey</h3>
+
+            <p class="desc">
+              From hot air balloons to ancient bazaars — every corner tells a
+              story.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Bali Bliss.jpg" alt="Bali" />
+          </div>
+          <div class="card-content">
+            <h3>Bali Bliss</h3>
+
+            <p class="desc">
+              Find your zen among temples, beaches & tropical beauty like no
+              other.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Maldives Escape.jpg" alt="Maldives" />
+          </div>
+          <div class="card-content">
+            <h3>Maldives Escape</h3>
+
+            <p class="desc">
+              Luxury above the waves — wake up to the sound of the ocean breeze.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Hidden Malaysia.jpg" alt="Malaysia" />
+          </div>
+          <div class="card-content">
+            <h3>Hidden Malaysia</h3>
+
+            <p class="desc">
+              Discover exotic rainforests, vibrant streets & flavors that stay
+              forever.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Greece Getaway.jpg" alt="Greece" />
+          </div>
+          <div class="card-content">
+            <h3>Greece Getaway</h3>
+
+            <p class="desc">
+              Blue domes, white sands & sunsets that paint the Aegean sky.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Lonavala Hills.jpg" alt="Lonavala" />
+          </div>
+          <div class="card-content">
+            <h3>Lonavala Hills</h3>
+
+            <p class="desc">
+              Mist, mountains & monsoon magic — nature’s retreat near the city.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Heavenly Kashmir.jpg" alt="Kashmir" />
+          </div>
+          <div class="card-content">
+            <h3>Heavenly Kashmir</h3>
+
+            <p class="desc">
+              Paradise on earth — snow peaks, shikaras & soul-soothing beauty.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="card">
+          <div class="card-img">
+            <img src="logo/Img/Rishikesh & Haridwar Journey.jpg"
+              alt="Rishikesh" />
+          </div>
+          <div class="card-content">
+            <h3>Rishikesh & Haridwar Journey</h3>
+
+            <p class="desc">
+              Flow with the Ganga — peace, spirituality & adventure in every
+              breath.
+            </p>
+            <button>View Tour</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Themes -->
+
+    <h1 class="section-title">Travel Themes</h1>
+    <div
+      class="slider"
+      aria-roledescription="carousel"
+      aria-label="Travel themes">
+      <div class="viewport" id="viewport">
+        <!-- Transparent corner arrows -->
+        <button class="corner-arrow left" id="prevBtn" aria-label="Previous">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="corner-arrow right" id="nextBtn" aria-label="Next">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+            <polyline points="9 6 15 12 9 18"></polyline>
+          </svg>
+        </button>
+
+        <div class="track" id="track">
+          <!-- Pilgrimage Tour -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://static.toiimg.com/thumb/msid-86454434,width-748,height-499,resizemode-4,imgsize-105812/Your-guide-to-planning-a-Mathura-Vrindavan-trip.jpg"
+                alt="Pilgrimage Tour" />
+            </div>
+            <div class="tour-title">Pilgrimage Tour</div>
+            <div class="tour-footer">
+              <span class="label">🛕 Divine</span>
+              <button class="card-arrow-btn" type="button" aria-label="Next">
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- Special Tour -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://www.puravidamoms.com/wp-content/uploads/2022/11/Arenal-Manoa-Hotel-1024x683.jpeg"
+                alt="Special Tour" />
+            </div>
+            <div class="tour-title">Special Tour</div>
+            <div class="tour-footer">
+              <span class="label">✨ Premium</span>
+              <button class="card-arrow-btn" type="button" aria-label="Next">
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- Family Tour -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://assets.serenity.co.uk/58000-58999/58031/1296x864.jpg"
+                alt="Family Tour" />
+            </div>
+            <div class="tour-title">Family Tour</div>
+            <div class="tour-footer">
+              <span class="label">👨‍👩‍👧 Family</span>
+              <button class="card-arrow-btn" type="button" aria-label="Next">
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- Adventure Tour -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://gearminded.com/wp-content/uploads/2018/04/HI-Adventures-Mountain-Bike-Tour-Colorado-8.jpg"
+                alt="Adventure Tour" />
+            </div>
+            <div class="tour-title">Adventure Tour</div>
+            <div class="tour-footer">
+              <span class="label">🏄‍♂️ Thrill</span>
+              <button class="card-arrow-btn" type="button" aria-label="Next">
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- Senior Special -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://www.goodfreephotos.com/albums/india/other/mysore-palace-in-india.jpg?auto=compress&cs=tinysrgb&w=800"
+                alt="Senior Special" />
+            </div>
+            <div class="tour-title">Senior Special</div>
+            <div class="tour-footer">
+              <span class="label">🧓 Comfort</span>
+              <button class="card-arrow-btn" type="button" aria-label="Next">
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- Honeymoon Special -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://www.theknot.com/tk-media/images/0108e30b-f23f-4d5b-bacb-c13df8215c94"
+                alt="Honeymoon Special" />
+            </div>
+            <div class="tour-title">Honeymoon Special</div>
+            <div class="tour-footer">
+              <span class="label">💞 Romance</span>
+              <button class="card-arrow-btn" type="button" aria-label="Next">
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots" aria-label="Slide pagination"></div>
+    </div>
+
+    <!-- Review Section -->
+
+    <div id="container">
+      <h2 style="color: #fff;">Connecting People Through The Elegance of
+        Travel.</h2>
+      <div class="counter">
+        <div class="tours">
+          <h1 class="co1"></h1>
+          <p>Years of Industry <br> Expertise</p>
+        </div>
+        <div class="tours">
+          <h1 class="co2"></h1>
+          <p>Tours completed</p>
+        </div>
+        <div class="tours">
+          <h1 class="co3"></h1>
+          <p>Happy Customer</p>
+        </div>
+        <div class="tours">
+          <h1 class="co4"></h1>
+          <p>Destinations to choose <br> from</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- service section -->
+
+    <section class="services-section">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-card">
+          <div class="icon">🎫</div>
+          <h3>Fast Booking →</h3>
+          <p>Book your trips quickly and effortlessly with our fast booking
+            system, ensuring a smooth and hassle-free travel experience.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🚗</div>
+          <h3>Car Rentals →</h3>
+          <p>Get affordable car rentals with flexible options and trusted
+            drivers for a convenient travel experience.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🏨</div>
+          <h3>Hotels →</h3>
+          <p>Book from a wide range of hotels with comfort and style to make
+            your stay truly memorable.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">✈</div>
+          <h3>Flights →</h3>
+          <p>Find the best flight deals and enjoy smooth, secure, and timely
+            travel around the world.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🏷</div>
+          <h3>Existing Deal →</h3>
+          <p>Grab our exclusive travel deals and enjoy discounted packages for
+            your next adventure!</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">📞</div>
+          <h3>24/7 Support →</h3>
+          <p>Enjoy 24x7 support for a seamless and worry-free travel
+            experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Powered Suggestions -->
+
+    <header>
+      <h1>Find your next trip ✈️</h1>
+      <p>
+        AI‑style suggestions from your interests. No prices, no ratings — just
+        vibes and fit.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel controls" aria-label="Traveler interests">
+        <div class="chips" id="chips">
+          <input id="adventure" type="checkbox" />
+          <label for="adventure" class="chip"><span class="emoji">🧗</span>
+            Adventure</label>
+
+          <input id="sightseeing" type="checkbox" />
+          <label for="sightseeing" class="chip"><span class="emoji">🗺️</span>
+            Sightseeing</label>
+
+          <input id="culture" type="checkbox" />
+          <label for="culture" class="chip"><span class="emoji">🎭</span>
+            Culture</label>
+
+          <input id="food" type="checkbox" />
+          <label for="food" class="chip"><span class="emoji">🍜</span>
+            Food</label>
+
+          <input id="relaxation" type="checkbox" />
+          <label for="relaxation" class="chip"><span class="emoji">🧘</span>
+            Relaxation</label>
+        </div>
+        <div class="actions">
+          <button id="suggest">Get suggestions</button>
+          <button id="surprise" class="secondary">Surprise me</button>
+          <button id="clear" class="secondary">Clear</button>
+        </div>
+      </section>
+
+      <section id="results" class="grid" aria-live="polite" aria-busy="false">
+        <div class="empty">
+          Pick one or more interests to generate suggestions.
+        </div>
+      </section>
+    </main>
+
+    <!-- robot chat -->
+
+    <div class="chatbot-window" id="chatWindow">
+      <div class="chat-header">
+        Travel Assistant
+        <span id="closeChat" style="cursor:pointer;">✖</span>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-message bot-message">
+          Hi! I'm here to help you with your travel questions. How can I assist
+          you today?
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="userInput"
+          placeholder="Ask me anything about travel..." />
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+
+    <!-- Floating Chatbot Button with Lottie Animation -->
+    <button class="chatbot-btn" id="chatbotBtn">
+      <dotlottie-wc
+        src="https://lottie.host/305d26db-a61d-4b38-ac92-21cb6bb3de77/lrBZJb8EC6.lottie"
+        style="width: 500px;height: 500px" autoplay loop></dotlottie-wc>
+    </button>
+
+    <!-- Footer section -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Infinte Travels</h3>
+          <p>Explore the world with us! We offer personalized travel experiences
+            and exciting destinations for every kind of traveler.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Travel Categories</h3>
+          <ul>
+            <li><a href="#">Adventure</a></li>
+            <li><a href="#">Pilgrimage</a></li>
+            <li><a href="#">Special Tour</a></li>
+            <li><a href="#">Honeymoon</a></li>
+            <li><a href="#">Senior Special</a></li>
+            <li><a href="#">Family Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer-column contact-info">
+          <h3>Contact Info</h3>
+          <p><i class="fa fa-map-marker"></i>Ahmedabad,Gujarat</p>
+          <p><i class="fa fa-phone"></i>+91 9876543210</p>
+          <p><i class="fa fa-envelope"></i>info@travelease.com</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Load Lottie Animation Library -->
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+      type="module"></script>
+
+    <script>
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
@@ -363,6 +1865,744 @@ menuToggle.addEventListener('click', () => {
 });
 
 
+// Travel Themes
+
+      const slider = document.querySelector(".slider");
+      const viewport = document.getElementById("viewport");
+      const track = document.getElementById("track");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const dotsEl = document.getElementById("dots");
+
+      const cards = Array.from(track.children);
+      let index = 0;
+      let perPage = getPerPage();
+      let pageCount = Math.ceil(cards.length / perPage);
+
+      function getPerPage() {
+        return (
+          parseInt(getComputedStyle(slider).getPropertyValue("--per-page")) || 3
+        );
+      }
+
+      function buildDots() {
+        dotsEl.innerHTML = "";
+        for (let i = 0; i < pageCount; i++) {
+          const dot = document.createElement("button");
+          dot.className = "dot";
+          dot.type = "button";
+          dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+          if (i === index) dot.setAttribute("aria-current", "true");
+          dot.addEventListener("click", () => goTo(i));
+          dotsEl.appendChild(dot);
+        }
+      }
+      function updateDots() {
+        [...dotsEl.children].forEach((d, i) => {
+          if (i === index) d.setAttribute("aria-current", "true");
+          else d.removeAttribute("aria-current");
+        });
+      }
+
+      function goTo(i) {
+        index = (i + pageCount) % pageCount; // wrap around
+        const offset = -index * viewport.clientWidth;
+        track.style.transform = `translateX(${offset}px)`;
+        updateDots();
+      }
+      function goNext() {
+        goTo(index + 1);
+      }
+      function goPrev() {
+        goTo(index - 1);
+      }
+
+      function onResize() {
+        const oldPerPage = perPage;
+        const firstVisibleItem = index * oldPerPage;
+
+        perPage = getPerPage();
+        pageCount = Math.ceil(cards.length / perPage);
+        index = Math.floor(firstVisibleItem / perPage);
+
+        buildDots();
+        goTo(index);
+      }
+
+      // Corner arrows
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goPrev();
+      });
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goNext();
+      });
+
+      // Make in-card right arrows advance the slider
+      document.querySelectorAll(".card-arrow-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          goNext();
+        });
+      });
+
+      // Mouse wheel navigation (easier than dragging on desktop)
+      let lastWheel = 0;
+      viewport.addEventListener(
+        "wheel",
+        (e) => {
+          const now = Date.now();
+          if (now - lastWheel < 450) return;
+          const magnitude = Math.abs(e.deltaX) + Math.abs(e.deltaY);
+          if (magnitude < 10) return;
+          e.preventDefault();
+          if (e.deltaY > 0 || e.deltaX > 0) goNext();
+          else goPrev();
+          lastWheel = now;
+        },
+        { passive: false }
+      );
+
+      // Touch swipe (only on touch devices)
+      const isTouch = matchMedia("(hover: none) and (pointer: coarse)").matches;
+      if (isTouch) {
+        let startX = 0;
+        let startTranslate = 0;
+        let isDown = false;
+
+        function touchStart(e) {
+          isDown = true;
+          startX = e.touches?.[0]?.clientX ?? 0;
+          startTranslate = -index * viewport.clientWidth;
+          track.style.transition = "none";
+        }
+        function touchMove(e) {
+          if (!isDown) return;
+          const x = e.touches?.[0]?.clientX ?? 0;
+          const dx = x - startX;
+          track.style.transform = `translateX(${startTranslate + dx}px)`;
+        }
+        function touchEnd(e) {
+          if (!isDown) return;
+          isDown = false;
+          track.style.transition = "";
+          const endX = e.changedTouches?.[0]?.clientX ?? 0;
+          const dx = endX - startX;
+          const threshold = viewport.clientWidth * 0.2;
+          if (dx < -threshold) goNext();
+          else if (dx > threshold) goPrev();
+          else goTo(index);
+        }
+
+        viewport.addEventListener("touchstart", touchStart, { passive: true });
+        viewport.addEventListener("touchmove", touchMove, { passive: true });
+        viewport.addEventListener("touchend", touchEnd);
+      }
+
+      // Keyboard (optional)
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") goNext();
+        if (e.key === "ArrowLeft") goPrev();
+      });
+
+      window.addEventListener("resize", onResize);
+
+      // Init
+      buildDots();
+      goTo(0);
+
+
+
+
+// Review Section
+
+ let h1Tag1 = document.querySelector('.co1');
+        let h1Tag2 = document.querySelector('.co2');
+        let h1Tag3 = document.querySelector('.co3');
+        let h1Tag4 = document.querySelector('.co4');
+
+        let w = 0, x = 0, y = 0, z = 0;
+
+        function counter1(){ if(w<=30){ h1Tag1.innerHTML = w++; } }
+        setInterval(counter1,490)
+
+        function counter2(){ if(x<=3050){ h1Tag2.innerHTML = x++; } }
+        setInterval(counter2,5)
+        
+        function counter3(){ if(y<=4013){ h1Tag3.innerHTML = y++; } }
+        setInterval(counter3,1)
+        
+        function counter4(){ if(z<=2000){ h1Tag4.innerHTML = z++; } }
+        setInterval(counter4,8)
+
+
+
+        // chatbot script
+
+         const chatbotBtn = document.getElementById("chatbotBtn");
+    const chatWindow = document.getElementById("chatWindow");
+    const closeChat = document.getElementById("closeChat");
+    const chatBody = document.getElementById("chatBody");
+    const sendBtn = document.getElementById("sendBtn");
+    const userInput = document.getElementById("userInput");
+
+    // Toggle chat window visibility
+    chatbotBtn.addEventListener("click", () => {
+      chatWindow.style.display = "flex";
+      chatbotBtn.style.display = "none";
+    });
+
+    closeChat.addEventListener("click", () => {
+      chatWindow.style.display = "none";
+      chatbotBtn.style.display = "flex";
+    });
+
+    // Send message
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    function sendMessage() {
+      const message = userInput.value.trim();
+      if (message === "") return;
+
+      // Display user message
+      const userMsgDiv = document.createElement("div");
+      userMsgDiv.classList.add("chat-message", "user-message");
+      userMsgDiv.innerText = message;
+      chatBody.appendChild(userMsgDiv);
+
+      // Clear input field
+      userInput.value = "";
+
+      // Simulate bot response
+      setTimeout(() => {
+        const botMsgDiv = document.createElement("div");
+        botMsgDiv.classList.add("chat-message", "bot-message");
+        botMsgDiv.innerText = getBotResponse(message);
+        chatBody.appendChild(botMsgDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 600);
+    }
+
+    // Simple predefined responses
+    function getBotResponse(input) {
+      input = input.toLowerCase();
+      if (input.includes("hello")) return "Hello there! Ready to plan your next trip?";
+      if (input.includes("best place") || input.includes("recommend"))
+        return "Some great destinations are Bali, Paris, and Kyoto depending on your interests.";
+      if (input.includes("relax"))
+        return "You can try Maldives, Santorini, or Goa for ultimate relaxation!";
+      if (input.includes("adventure"))
+        return "Try skydiving in Dubai or trekking in the Himalayas!";
+      if (input.includes("culture"))
+        return "You’ll love exploring Kyoto, Rome, or Jaipur for rich cultural experiences.";
+      return "I'm here to help with travel ideas, tips, or destinations. Ask me anything!";
+    }
+
+
+    // AI Powerd suggestions
+
+    // ----- Data
+      const TAGS = [
+        "adventure",
+        "sightseeing",
+        "culture",
+        "food",
+        "relaxation",
+      ];
+      const TAG_EMOJI = {
+        adventure: "🧗",
+        sightseeing: "🗺️",
+        culture: "🎭",
+        food: "🍜",
+        relaxation: "🧘",
+      };
+
+      const PLACES = [
+        // Oceania / Asia
+        place(
+          "queenstown",
+          "Queenstown",
+          "New Zealand",
+          "Oceania",
+          ["adventure", "sightseeing", "relaxation"],
+          "The adrenaline capital with alpine lakes, canyon swings, and panoramic hikes.",
+          ["Kawarau Bridge bungee", "Shotover jet boat", "Ben Lomond Track"],
+          "Dec–Mar",
+          "https://images.unsplash.com/photo-1530656131887-4765f003e900?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cXVlZW5zdG93biUyMG5ldyUyMHplYWxhbmR8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000"
+        ),
+        place(
+          "bali",
+          "Bali (Ubud & Uluwatu)",
+          "Indonesia",
+          "Asia",
+          ["relaxation", "culture", "food", "sightseeing"],
+          "Jungle temples, rice terraces, surf breaks, and slow mornings with great coffee.",
+          [
+            "Tegallalang rice terraces",
+            "Uluwatu Temple at sunset",
+            "Balinese cooking class",
+          ],
+          "Apr–Jun",
+          "https://media.istockphoto.com/id/515480864/photo/beautiful-rice-terraces-ubud-bali-indonesia.jpg?s=612x612&w=0&k=20&c=5_bqGX6zGphyDiq4H-c3LlHWp_WRa9XQfw04nORVmV4="
+        ),
+        place(
+          "kyoto",
+          "Kyoto",
+          "Japan",
+          "Asia",
+          ["culture", "sightseeing", "food", "relaxation"],
+          "Shrines, gardens, and tea houses set the pace for thoughtful wandering.",
+          ["Fushimi Inari gates", "Arashiyama bamboo grove", "Kaiseki dinner"],
+          "Mar–Apr, Nov",
+          "https://media.istockphoto.com/id/468624477/photo/kyoto.jpg?s=612x612&w=0&k=20&c=kiPlO1vLpUq2X3V3mqBJzRuq28ALEh8yTi2pYAPJ4Ak="
+        ),
+        place(
+          "tokyo",
+          "Tokyo",
+          "Japan",
+          "Asia",
+          ["culture", "food", "sightseeing"],
+          "Neon streets and quiet shrines; ramen runs, rooftops, and late-night neighborhoods.",
+          ["Tsukiji Outer Market", "TeamLab Borderless", "Asakusa & Senso-ji"],
+          "Mar–May, Oct–Nov",
+          "https://t3.ftcdn.net/jpg/02/65/23/70/360_F_265237090_Muthvb72m2POYFjyx7F5UCQLh9JdBtKN.jpg"
+        ),
+        place(
+          "hoi-an",
+          "Hoi An",
+          "Vietnam",
+          "Asia",
+          ["culture", "food", "relaxation"],
+          "Lantern-lit lanes and riverside cafes with breezy bikes to the beach.",
+          ["Old Town lantern walk", "Banh mi crawl", "An Bang Beach"],
+          "Feb–May",
+          "https://media.istockphoto.com/id/2166041064/photo/aerial-view-of-hoi-an-ancient-town-at-twilight-vietnam.jpg?s=612x612&w=0&k=20&c=HBlS9UovTAPJGAg6mkiW1y3rZYmvW5Gp7X3x-NC7HNw="
+        ),
+        place(
+          "bangkok",
+          "Bangkok",
+          "Thailand",
+          "Asia",
+          ["food", "culture", "sightseeing"],
+          "Street-food legend with gilded temples and Chao Phraya boat rides.",
+          ["Wat Pho & Wat Arun", "Chinatown food tour", "Weekend markets"],
+          "Nov–Feb",
+          "https://media.istockphoto.com/id/1477016740/photo/wat-arun-temple-bangkok-during-sunset-in-thailand.jpg?s=612x612&w=0&k=20&c=5lcKk51cPycXKYpxRUFBXSK7nJr0MbUcuoLrCyrmwp0="
+        ),
+
+        // Europe
+        place(
+          "reykjavik",
+          "Reykjavík & South Coast",
+          "Iceland",
+          "Europe",
+          ["adventure", "sightseeing"],
+          "Waterfalls, black-sand beaches, and lava fields under ever-changing skies.",
+          ["Skógafoss & Seljalandsfoss", "Reynisfjara beach", "Blue Lagoon"],
+          "Jun–Sep",
+          "https://media.istockphoto.com/id/825428482/photo/reykjavik-capital-city-of-iceland.jpg?s=612x612&w=0&k=20&c=gJFUYanA7gaaI7GNgPdlOqfcSq7OflHU03jKFEdIG9Q="
+        ),
+        place(
+          "rome",
+          "Rome",
+          "Italy",
+          "Europe",
+          ["culture", "sightseeing", "food"],
+          "Ancient forums, piazzas, espresso shots, and long twilight strolls.",
+          ["Colosseum & Forum", "Trastevere aperitivo", "Vatican Museums"],
+          "Apr–Jun, Sep–Oct",
+          "https://media.istockphoto.com/id/534799507/photo/rome-italy.jpg?s=612x612&w=0&k=20&c=PJueV30-3FDZfof-LkH3MaYUEyRw7mIDC2-C4vzpDBc="
+        ),
+        place(
+          "paris",
+          "Paris",
+          "France",
+          "Europe",
+          ["culture", "sightseeing", "food"],
+          "Museums, boulevards, and patisserie windows you can’t walk past.",
+          ["Seine sunset walk", "Louvre or Orsay", "Montmartre"],
+          "Apr–Jun, Sep–Oct",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2knxOb8YYbryjHkf5AchdAHOqTvRen4sH2w&s"
+        ),
+        place(
+          "lisbon",
+          "Lisbon",
+          "Portugal",
+          "Europe",
+          ["sightseeing", "food", "culture"],
+          "Hilly viewpoints, azulejos, and seafood at tiny tascas.",
+          ["Alfama tram & miradouros", "Belém pastéis", "Time Out Market"],
+          "Apr–Jun, Sep",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FuGfpHEfePUvAyxwxF01TB7xxSNwASrTBg&s"
+        ),
+        place(
+          "santorini",
+          "Santorini",
+          "Greece",
+          "Europe",
+          ["relaxation", "sightseeing", "culture"],
+          "Whitewashed villages on cliffs and sapphire caldera views.",
+          ["Oia sunset", "Caldera boat day", "Hike Fira–Oia"],
+          "May–Jun, Sep–Oct",
+          "https://www.shutterstock.com/image-photo/amoudi-bay-refreshing-water-port-260nw-2514576893.jpg"
+        ),
+        place(
+          "swiss-alps",
+          "Swiss Alps",
+          "Switzerland",
+          "Europe",
+          ["adventure", "relaxation", "sightseeing"],
+          "Glacier views, wildflower meadows, and slow trains between tiny villages.",
+          ["Gornergrat railway", "Lauterbrunnen valley", "Alpine spa day"],
+          "Jun–Sep",
+          "https://static.toiimg.com/thumb/msid-113370310,width-748,height-499,resizemode=4,imgsize-216138/.jpg"
+        ),
+        place(
+          "seville",
+          "Seville",
+          "Spain",
+          "Europe",
+          ["culture", "food", "sightseeing"],
+          "Orange blossoms, flamenco evenings, and tiled courtyards.",
+          ["Real Alcázar", "Tapas hop in Triana", "Plaza de España"],
+          "Mar–May, Sep–Nov",
+          "https://media.istockphoto.com/id/576913134/photo/spain-square-seville-spain.jpg?s=612x612&w=0&k=20&c=ugjhdElnrg3Gid4SIDZSEyT0IUgAo7EGDYFhe4BEw1A="
+        ),
+        place(
+          "dubrovnik",
+          "Dubrovnik",
+          "Croatia",
+          "Europe",
+          ["sightseeing", "culture", "relaxation"],
+          "Stone ramparts, island swims, and Adriatic sunsets.",
+          ["City walls walk", "Lokrum island", "Cable car viewpoint"],
+          "May–Jun, Sep",
+          "https://t3.ftcdn.net/jpg/01/60/58/84/360_F_160588424_Wi06t7zwyPlEHCxvjvZ0ZWwjbVIvdWWz.jpg"
+        ),
+        place(
+          "istanbul",
+          "Istanbul",
+          "Turkey",
+          "Europe",
+          ["culture", "food", "sightseeing"],
+          "Bazaars, domes, ferries, and fresh simit by the Bosphorus.",
+          ["Hagia Sophia & Blue Mosque", "Spice Bazaar", "Bosphorus cruise"],
+          "Apr–Jun, Sep–Oct",
+          "https://media.istockphoto.com/id/1499025854/photo/touristic-sightseeing-ships-in-istanbul-city-turkey.jpg?s=612x612&w=0&k=20&c=K43B2lq3aH_G1uzE8z48Oz0HDokFhCV1rbwzZh3iP_k="
+        ),
+
+        // Africa
+        place(
+          "marrakech",
+          "Marrakech",
+          "Morocco",
+          "Africa",
+          ["culture", "food", "sightseeing"],
+          "Labyrinth souks, courtyard riads, and rooftop tagines under the call to prayer.",
+          ["Jemaa el-Fnaa", "Bahia Palace", "Atlas day trip"],
+          "Mar–May, Oct–Nov",
+          "https://media.istockphoto.com/id/982105760/photo/ait-benhaddou-ancient-city-in-morocco-north-africa.jpg?s=612x612&w=0&k=20&c=RtNjLQio6qFLwhn_MA6J0mCsDsbbE2Wji9mahh-5laM="
+        ),
+        place(
+          "capetown",
+          "Cape Town",
+          "South Africa",
+          "Africa",
+          ["adventure", "sightseeing", "food", "relaxation"],
+          "Table Mountain hikes, penguin beaches, and weekend winelands.",
+          ["Table Mountain cableway", "Boulders Beach", "Cape Point drive"],
+          "Nov–Mar",
+          "https://t4.ftcdn.net/jpg/01/84/39/17/360_F_184391723_FL2qOiRQPlPT4MbVvB7qiTebWBiO0ih6.jpg"
+        ),
+
+        // Americas
+        place(
+          "banff",
+          "Banff National Park",
+          "Canada",
+          "Americas",
+          ["adventure", "sightseeing", "relaxation"],
+          "Turquoise lakes, easy lookouts, and big alpine days if you want them.",
+          ["Lake Louise", "Moraine Lake", "Johnston Canyon"],
+          "Jun–Sep",
+          "https://www.tripsavvy.com/thmb/yD2KRuls7CiXYcIkXGKCD87jS9o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/rue-saint-louis-in-the-upper-town-area-of-historic-old-quebec-quebec-city-quebec-canada-554993579-574d08b83df78ccee110df3b.jpg"
+        ),
+        place(
+          "patagonia",
+          "Patagonia",
+          "Argentina",
+          "Americas",
+          ["adventure", "sightseeing"],
+          "Otherworldly granite spires, vast skies, and glacier valleys.",
+          [
+            "Torres del Paine W trek",
+            "Perito Moreno Glacier",
+            "Fitz Roy day hike",
+          ],
+          "Nov–Mar",
+          "https://www.voyagers.travel/_ipx/w_800&f_webp&q_85/google/travel-web-app-1.appspot.com/flamelink/media/patagonia-mountain.jpg%3Falt=media"
+        ),
+        place(
+          "new-orleans",
+          "New Orleans",
+          "USA",
+          "Americas",
+          ["culture", "food"],
+          "Brass bands, Creole flavors, and porch swings under live oaks.",
+          ["Frenchmen Street", "Beignets at Cafe du Monde", "Garden District"],
+          "Mar–May",
+          "https://www.girlabouttheglobe.com/wp-content/uploads/2024/06/new-orleans-1630343_640.jpg"
+        ),
+        place(
+          "yosemite",
+          "Yosemite National Park",
+          "USA",
+          "Americas",
+          ["adventure", "sightseeing", "relaxation"],
+          "Granite walls, giant sequoias, and valley meadows made for picnics.",
+          ["Glacier Point", "Mist Trail", "Mariposa Grove"],
+          "May–Oct",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR38PXhimxxSbmxoLxMart1UAH4BbKwJhn6KA&s"
+        ),
+
+        // More Asia
+        place(
+          "siemreap",
+          "Siem Reap",
+          "Cambodia",
+          "Asia",
+          ["culture", "sightseeing"],
+          "Jungle-wrapped temples and sunrise spires at Angkor.",
+          ["Angkor Wat sunrise", "Ta Prohm", "Phare circus"],
+          "Nov–Feb",
+          "https://t3.ftcdn.net/jpg/01/35/25/78/360_F_135257843_t429yIdQGsagUU6kS6JVMiZyUT8R6BFq.jpg"
+        ),
+        place(
+          "annapurna",
+          "Annapurna Region",
+          "Nepal",
+          "Asia",
+          ["adventure", "sightseeing", "culture"],
+          "Tea-house treks through rhododendron forests and Himalayan panoramas.",
+          ["Poon Hill trek", "Annapurna Base Camp", "Pokhara lakeside"],
+          "Oct–Nov, Mar–Apr",
+          "https://cdn.britannica.com/55/95855-050-064DAEB9/Village-range-Annapurna-Nepal-Himalayas.jpg"
+        ),
+
+        // Italy coast
+        place(
+          "amalfi",
+          "Amalfi Coast",
+          "Italy",
+          "Europe",
+          ["relaxation", "sightseeing", "food"],
+          "Cliffside towns, lemon groves, and sunlit ferry hops.",
+          ["Path of the Gods", "Ravello terraces", "Capri boat day"],
+          "May–Jun, Sep",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrTIqNrvurXYvKSBVF5KXWBUB64_m_aRpi2w&s"
+        ),
+      ];
+
+      function place(
+        id,
+        name,
+        country,
+        region,
+        tags,
+        description,
+        highlights,
+        bestTimeLabel,
+        img
+      ) {
+        return {
+          id,
+          name,
+          country,
+          region,
+          tags,
+          description,
+          highlights,
+          bestTimeLabel,
+          img,
+        };
+      }
+
+      // ----- Helpers (AI-ish relevance scoring + diversity)
+      function jaccard(a, b) {
+        const A = new Set(a),
+          B = new Set(b);
+        const inter = [...A].filter((x) => B.has(x)).length;
+        const uni = new Set([...a, ...b]).size || 1;
+        return inter / uni;
+      }
+
+      // Small synergy bonus for natural pairings
+      function synergy(tags, selected) {
+        const has = (t) => tags.includes(t) && selected.includes(t);
+        let s = 0;
+        if (has("culture") && has("food")) s += 0.6;
+        if (has("adventure") && has("sightseeing")) s += 0.5;
+        if (has("relaxation") && has("sightseeing")) s += 0.25;
+        return s;
+      }
+
+      function scorePlace(place, selected) {
+        if (!selected.length) return 0.0001 + Math.random() * 0.01;
+        const inter = place.tags.filter((t) => selected.includes(t));
+        const base = 3 * inter.length + 5 * jaccard(place.tags, selected);
+        const syn = synergy(place.tags, selected);
+        const seasonal = 0; // placeholder if you later add month-based boost
+        const noise = (Math.random() - 0.5) * 0.6; // small variety
+        return base + syn + seasonal + noise;
+      }
+
+      function pickDiverse(sortedPlaces, limit = 6) {
+        const chosen = [];
+        const regionCount = {};
+        for (const p of sortedPlaces) {
+          const count = regionCount[p.region] || 0;
+          if (count >= 2) continue; // keep region diversity
+          chosen.push(p);
+          regionCount[p.region] = count + 1;
+          if (chosen.length >= limit) break;
+        }
+        // if we didn’t reach limit because of diversity rules, fill remaining
+        if (chosen.length < limit) {
+          for (const p of sortedPlaces) {
+            if (chosen.includes(p)) continue;
+            chosen.push(p);
+            if (chosen.length >= limit) break;
+          }
+        }
+        return chosen;
+      }
+
+      function whyLine(place, selected) {
+        const matched = place.tags.filter((t) => selected.includes(t));
+        if (!matched.length) return "Balanced pick for broad appeal";
+        return ` Matches: ${matched.map((t) => capitalize(t)).join(" · ")}`;
+      }
+
+      function capitalize(s) {
+        return s.charAt(0).toUpperCase() + s.slice(1);
+      }
+
+      // ----- UI wiring
+      const resultsEl = document.getElementById("results");
+      const suggestBtn = document.getElementById("suggest");
+      const surpriseBtn = document.getElementById("surprise");
+      const clearBtn = document.getElementById("clear");
+
+      function getSelected() {
+        return TAGS.filter((id) => document.getElementById(id).checked);
+      }
+
+      function setSelected(list) {
+        TAGS.forEach(
+          (id) => (document.getElementById(id).checked = list.includes(id))
+        );
+        localStorage.setItem("travel_interests", JSON.stringify(list));
+      }
+
+      function loadSelected() {
+        try {
+          const raw = localStorage.getItem("travel_interests");
+          if (!raw) return;
+          const list = JSON.parse(raw);
+          if (Array.isArray(list)) setSelected(list);
+        } catch (e) {}
+      }
+
+      function render() {
+        const selected = getSelected();
+        resultsEl.setAttribute("aria-busy", "true");
+        resultsEl.innerHTML = "";
+
+        if (!selected.length) {
+          // show a soft prompt
+          const div = document.createElement("div");
+          div.className = "empty";
+          div.textContent =
+            "Pick one or more interests to generate suggestions.";
+          resultsEl.appendChild(div);
+          resultsEl.setAttribute("aria-busy", "false");
+          return;
+        }
+
+        // Score, sort, and pick
+        const scored = PLACES.map((p) => ({
+          ...p,
+          _score: scorePlace(p, selected),
+        })).sort((a, b) => b._score - a._score);
+
+        const picks = pickDiverse(scored, 6);
+
+        for (const p of picks) {
+          resultsEl.appendChild(card(p, selected));
+        }
+        resultsEl.setAttribute("aria-busy", "false");
+      }
+
+      function card(p, selected) {
+        const el = document.createElement("article");
+        el.className = "card";
+        el.innerHTML = `
+    <div class="media">
+      <img src="${p.img}" alt="${p.name} in ${p.country}" loading="lazy" />
+      <div class="tagbar">
+        ${p.tags
+          .map(
+            (t) => `
+              <span class="pill">
+                ${TAG_EMOJI[t]} ${capitalize(t)}
+              </span>
+            `
+          )
+          .join("")}
+      </div>
+    </div>
+    <div class="content">
+      <h3 class="title">${p.name}</h3>
+      <div class="sub">${p.country} • Best time: ${p.bestTimeLabel}</div>
+      <p class="desc">${p.description}</p>
+      <ul class="hl">
+        ${p.highlights.map((h) => `<li>${h}</li>`).join("")}
+      </ul>
+      <div class="meta">
+        <span class="why">${whyLine(p, selected)}</span>
+        <span>${p.region}</span>
+      </div>
+    </div>
+  `;
+        return el;
+      }
+
+      // ----- Button actions
+      suggestBtn.addEventListener("click", render);
+
+      surpriseBtn.addEventListener("click", () => {
+        const randomTags = TAGS.sort(() => 0.5 - Math.random()).slice(0, 2);
+        setSelected(randomTags);
+        render();
+      });
+
+      clearBtn.addEventListener("click", () => {
+        setSelected([]);
+        render();
+      });
+
+      document.getElementById("chips").addEventListener("change", () => {
+        const selected = getSelected();
+        localStorage.setItem("travel_interests", JSON.stringify(selected));
+      });
+
+      loadSelected();
+      render();
+
     </script>
-    </body>
+  </body>
 </html>
